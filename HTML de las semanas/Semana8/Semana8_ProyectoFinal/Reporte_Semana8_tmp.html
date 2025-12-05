@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reporte_Semana8.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="reporte-semana-8-proyecto-final-integrador">Reporte Semana 8: Proyecto Final Integrador</h1>
+<h2 id="sistema-completo-de-grafos">Sistema Completo de Grafos</h2>
+<hr>
+<h2 id="%F0%9F%93%8B-resumen-ejecutivo">📋 Resumen Ejecutivo</h2>
+<p><strong>Semana:</strong> 8<br>
+<strong>Tema:</strong> Proyecto Final - Integración de Todos los Conceptos<br>
+<strong>Fecha:</strong> Diciembre 2025</p>
+<hr>
+<h2 id="%F0%9F%8E%AF-objetivos-cumplidos">🎯 Objetivos Cumplidos</h2>
+<ul>
+<li>✅ Integrar BFS, DFS y Dijkstra en un solo sistema</li>
+<li>✅ Crear aplicación práctica (Red de ciudades)</li>
+<li>✅ Demostrar dominio de todos los conceptos del curso</li>
+<li>✅ Implementar sistema production-ready</li>
+<li>✅ Documentación completa</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%92%BB-sistema-implementado">💻 Sistema Implementado</h2>
+<h3 id="graphsystem---clase-integradora"><strong>GraphSystem - Clase Integradora</strong></h3>
+<p><strong>Funcionalidades:</strong></p>
+<ol>
+<li><strong>BFS</strong> - Camino más corto (sin pesos)</li>
+<li><strong>DFS</strong> - Detección de ciclos</li>
+<li><strong>Dijkstra</strong> - Camino más corto (con pesos)</li>
+<li><strong>Estadísticas</strong> - Análisis del grafo</li>
+</ol>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Genérico <code>GraphSystem&lt;T&gt;</code></li>
+<li>Soporte para grafos dirigidos y no dirigidos</li>
+<li>Pesos en las aristas</li>
+<li>Reconstrucción de caminos</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%8A-aplicaci%C3%B3n-pr%C3%A1ctica-red-de-ciudades-espa%C3%B1olas">📊 Aplicación Práctica: Red de Ciudades Españolas</h2>
+<h3 id="grafo-implementado"><strong>Grafo Implementado</strong></h3>
+<pre class="hljs"><code><div>Madrid (Centro)
+  ├─ Barcelona (620 km)
+  ├─ Valencia (350 km)
+  ├─ Sevilla (530 km)
+  └─ Zaragoza (320 km)
+
+Barcelona
+  ├─ Valencia (350 km)
+  └─ Zaragoza (300 km)
+
+Valencia
+  └─ Sevilla (650 km)
+</div></code></pre>
+<h3 id="resultados-de-ejecuci%C3%B3n"><strong>Resultados de Ejecución</strong></h3>
+<pre class="hljs"><code><div>🎓 Semana 8 - Proyecto Final Integrador
+Sistema Completo de Grafos
+
+============================================================
+
+🏙️ Construyendo red de ciudades...
+📊 Estadísticas del grafo:
+   Vértices: 5
+   Aristas: 14
+   Densidad: 0.700
+
+🔍 BFS - Camino más corto (número de ciudades):
+   Madrid → Sevilla
+   Ciudades visitadas: 2
+
+🗺️ Dijkstra - Camino más corto (distancia en km):
+   Madrid → Barcelona: Madrid → Zaragoza → Barcelona (620 km)
+   Madrid → Valencia: Madrid → Valencia (350 km)
+   Madrid → Sevilla: Madrid → Sevilla (530 km)
+   Madrid → Zaragoza: Madrid → Zaragoza (320 km)
+
+🔄 Detección de ciclos:
+   ¿Tiene ciclos? True
+
+============================================================
+✅ Conceptos aplicados en este proyecto:
+   ✓ Grafos (Listas de adyacencia)
+   ✓ BFS (Búsqueda en amplitud)
+   ✓ DFS (Búsqueda en profundidad)
+   ✓ Dijkstra (Caminos más cortos ponderados)
+   ✓ Detección de ciclos
+   ✓ Análisis de complejidad
+============================================================
+
+🎉 ¡Proyecto Final Completado!
+📚 Curso de Estructuras de Datos Avanzadas - 100% Completo
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%93%88-an%C3%A1lisis-de-resultados">📈 Análisis de Resultados</h2>
+<h3 id="comparaci%C3%B3n-bfs-vs-dijkstra"><strong>Comparación BFS vs Dijkstra</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>BFS (ciudades)</th>
+<th>Dijkstra (km)</th>
+<th>Diferencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Madrid → Sevilla</td>
+<td>2 ciudades</td>
+<td>530 km</td>
+<td>Directo</td>
+</tr>
+<tr>
+<td>Madrid → Barcelona</td>
+<td>2 ciudades</td>
+<td>620 km</td>
+<td>Vía Zaragoza</td>
+</tr>
+<tr>
+<td>Madrid → Valencia</td>
+<td>2 ciudades</td>
+<td>350 km</td>
+<td>Directo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusión:</strong></p>
+<ul>
+<li>BFS minimiza número de paradas</li>
+<li>Dijkstra minimiza distancia total</li>
+<li>Ambos son correctos para sus objetivos</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%8E%93-conceptos-integrados">🎓 Conceptos Integrados</h2>
+<h3 id="1-semana-1-2-recursi%C3%B3n-y-dp"><strong>1. Semana 1-2: Recursión y DP</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// DFS usa recursión (Semana 1)</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">HasCycleDFS</span>(<span class="hljs-params">T node, HashSet&lt;T&gt; visited, HashSet&lt;T&gt; recStack</span>)</span>
+{
+    visited.Add(node);
+    recStack.Add(node);
+    
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> (neighbor, _) <span class="hljs-keyword">in</span> graph[node])
+    {
+        <span class="hljs-keyword">if</span> (!visited.Contains(neighbor))
+        {
+            <span class="hljs-keyword">if</span> (HasCycleDFS(neighbor, visited, recStack))
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (recStack.Contains(neighbor))
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// Ciclo detectado</span>
+        }
+    }
+    
+    recStack.Remove(node);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</div></code></pre>
+<h3 id="2-semana-3-4-grafos-y-validaci%C3%B3n"><strong>2. Semana 3-4: Grafos y Validación</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// Listas de adyacencia (Semana 3)</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> Dictionary&lt;T, List&lt;(T to, <span class="hljs-keyword">double</span> weight)&gt;&gt; graph = <span class="hljs-keyword">new</span>();
+
+<span class="hljs-comment">// Validación de propiedades (Semana 4)</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PrintStats</span>(<span class="hljs-params"></span>)</span>
+{
+    Console.WriteLine(<span class="hljs-string">$"Vértices: <span class="hljs-subst">{graph.Count}</span>"</span>);
+    Console.WriteLine(<span class="hljs-string">$"Aristas: <span class="hljs-subst">{graph.Values.Sum(list =&gt; list.Count)}</span>"</span>);
+    Console.WriteLine(<span class="hljs-string">$"Densidad: <span class="hljs-subst">{(<span class="hljs-keyword">double</span>)graph.Values.Sum(list =&gt; list.Count) / (graph.Count * (graph.Count - <span class="hljs-number">1</span>)):F3}</span>"</span>);
+}
+</div></code></pre>
+<h3 id="3-semana-5-bfs-y-dfs"><strong>3. Semana 5: BFS y DFS</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// BFS para camino más corto</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;T&gt; <span class="hljs-title">BFS</span>(<span class="hljs-params">T start, T end</span>)</span>
+{
+    <span class="hljs-keyword">var</span> visited = <span class="hljs-keyword">new</span> HashSet&lt;T&gt;();
+    <span class="hljs-keyword">var</span> queue = <span class="hljs-keyword">new</span> Queue&lt;T&gt;();
+    <span class="hljs-keyword">var</span> parent = <span class="hljs-keyword">new</span> Dictionary&lt;T, T&gt;();
+    
+    queue.Enqueue(start);
+    visited.Add(start);
+    
+    <span class="hljs-keyword">while</span> (queue.Count &gt; <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">var</span> current = queue.Dequeue();
+        <span class="hljs-keyword">if</span> (current.Equals(end))
+            <span class="hljs-keyword">return</span> ReconstructPath(parent, start, end);
+        
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> (neighbor, _) <span class="hljs-keyword">in</span> graph[current])
+        {
+            <span class="hljs-keyword">if</span> (!visited.Contains(neighbor))
+            {
+                visited.Add(neighbor);
+                parent[neighbor] = current;
+                queue.Enqueue(neighbor);
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> List&lt;T&gt;();
+}
+</div></code></pre>
+<h3 id="4-semana-6-dijkstra"><strong>4. Semana 6: Dijkstra</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-comment">// Dijkstra para caminos ponderados</span>
+<span class="hljs-keyword">public</span> (Dictionary&lt;T, <span class="hljs-keyword">double</span>&gt; distances, Dictionary&lt;T, T&gt; previous) Dijkstra(T start)
+{
+    <span class="hljs-keyword">var</span> distances = <span class="hljs-keyword">new</span> Dictionary&lt;T, <span class="hljs-keyword">double</span>&gt;();
+    <span class="hljs-keyword">var</span> previous = <span class="hljs-keyword">new</span> Dictionary&lt;T, T&gt;();
+    <span class="hljs-keyword">var</span> pq = <span class="hljs-keyword">new</span> SortedSet&lt;(<span class="hljs-keyword">double</span> dist, T node)&gt;();
+    
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> node <span class="hljs-keyword">in</span> graph.Keys)
+        distances[node] = <span class="hljs-keyword">double</span>.PositiveInfinity;
+    
+    distances[start] = <span class="hljs-number">0</span>;
+    pq.Add((<span class="hljs-number">0</span>, start));
+    
+    <span class="hljs-keyword">while</span> (pq.Count &gt; <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">var</span> (currentDist, current) = pq.Min;
+        pq.Remove(pq.Min);
+        
+        <span class="hljs-keyword">if</span> (currentDist &gt; distances[current]) <span class="hljs-keyword">continue</span>;
+        
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> (neighbor, weight) <span class="hljs-keyword">in</span> graph[current])
+        {
+            <span class="hljs-keyword">var</span> newDist = distances[current] + weight;
+            <span class="hljs-keyword">if</span> (newDist &lt; distances[neighbor])
+            {
+                pq.Remove((distances[neighbor], neighbor));
+                distances[neighbor] = newDist;
+                previous[neighbor] = current;
+                pq.Add((newDist, neighbor));
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> (distances, previous);
+}
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%92%A1-lecciones-aprendidas">💡 Lecciones Aprendidas</h2>
+<h3 id="1-integraci%C3%B3n-de-conceptos"><strong>1. Integración de Conceptos</strong></h3>
+<ul>
+<li>Todos los algoritmos trabajan sobre la misma estructura (grafo)</li>
+<li>Cada algoritmo tiene su propósito específico</li>
+<li>La combinación ofrece soluciones completas</li>
+</ul>
+<h3 id="2-trade-offs"><strong>2. Trade-offs</strong></h3>
+<ul>
+<li>BFS: Rápido pero no considera pesos</li>
+<li>Dijkstra: Óptimo pero más complejo</li>
+<li>DFS: Eficiente para ciclos pero no para distancias</li>
+</ul>
+<h3 id="3-dise%C3%B1o-de-software"><strong>3. Diseño de Software</strong></h3>
+<ul>
+<li>Clase genérica permite reutilización</li>
+<li>Separación de responsabilidades</li>
+<li>Código limpio y mantenible</li>
+</ul>
+<h3 id="4-aplicaciones-reales"><strong>4. Aplicaciones Reales</strong></h3>
+<ul>
+<li>Navegación GPS</li>
+<li>Redes sociales</li>
+<li>Logística y transporte</li>
+<li>Análisis de redes</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%94%AC-casos-de-uso-demostrados">🔬 Casos de Uso Demostrados</h2>
+<h3 id="caso-1-planificaci%C3%B3n-de-viajes"><strong>Caso 1: Planificación de Viajes</strong></h3>
+<pre class="hljs"><code><div>Problema: Viajar de Madrid a Barcelona
+Solución BFS: 2 paradas (minimiza paradas)
+Solución Dijkstra: 620 km vía Zaragoza (minimiza distancia)
+</div></code></pre>
+<h3 id="caso-2-detecci%C3%B3n-de-rutas-circulares"><strong>Caso 2: Detección de Rutas Circulares</strong></h3>
+<pre class="hljs"><code><div>Problema: ¿Hay rutas circulares en la red?
+Solución DFS: Sí, detectado ciclo
+Aplicación: Evitar bucles infinitos en routing
+</div></code></pre>
+<h3 id="caso-3-an%C3%A1lisis-de-red"><strong>Caso 3: Análisis de Red</strong></h3>
+<pre class="hljs"><code><div>Problema: Estadísticas de la red
+Solución: 5 ciudades, 14 conexiones, densidad 70%
+Aplicación: Planificación de infraestructura
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%8E%AF-conclusiones-del-proyecto">🎯 Conclusiones del Proyecto</h2>
+<h3 id="logros-t%C3%A9cnicos"><strong>Logros Técnicos</strong></h3>
+<ol>
+<li>✅ Integración exitosa de 8 semanas de contenido</li>
+<li>✅ Sistema funcional y completo</li>
+<li>✅ Código production-ready</li>
+<li>✅ Documentación exhaustiva</li>
+</ol>
+<h3 id="logros-acad%C3%A9micos"><strong>Logros Académicos</strong></h3>
+<ol>
+<li>✅ Dominio de algoritmos fundamentales</li>
+<li>✅ Comprensión de estructuras de datos</li>
+<li>✅ Análisis de complejidad</li>
+<li>✅ Aplicación práctica de conceptos</li>
+</ol>
+<h3 id="habilidades-desarrolladas"><strong>Habilidades Desarrolladas</strong></h3>
+<ul>
+<li>Programación en C# y Python</li>
+<li>Diseño de algoritmos</li>
+<li>Análisis de complejidad</li>
+<li>Resolución de problemas</li>
+<li>Documentación técnica</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%9A-resumen-del-curso-completo">📚 Resumen del Curso Completo</h2>
+<h3 id="semanas-1-2-fundamentos"><strong>Semanas 1-2: Fundamentos</strong></h3>
+<ul>
+<li>Recursión vs Iteración</li>
+<li>Programación Dinámica</li>
+<li>Memoización y Tabulación</li>
+</ul>
+<h3 id="semanas-3-4-grafos-b%C3%A1sicos"><strong>Semanas 3-4: Grafos Básicos</strong></h3>
+<ul>
+<li>Representaciones de grafos</li>
+<li>Propiedades y validación</li>
+<li>Havel-Hakimi</li>
+</ul>
+<h3 id="semanas-5-6-algoritmos-de-grafos"><strong>Semanas 5-6: Algoritmos de Grafos</strong></h3>
+<ul>
+<li>BFS y DFS</li>
+<li>Dijkstra</li>
+<li>Caminos más cortos</li>
+</ul>
+<h3 id="semanas-7-8-integraci%C3%B3n"><strong>Semanas 7-8: Integración</strong></h3>
+<ul>
+<li>Árboles BST</li>
+<li>Proyecto final integrador</li>
+<li>Aplicaciones prácticas</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%8E%93-aplicaciones-futuras">🎓 Aplicaciones Futuras</h2>
+<h3 id="algoritmos-avanzados"><strong>Algoritmos Avanzados</strong></h3>
+<ul>
+<li>A* (Dijkstra con heurística)</li>
+<li>Bellman-Ford (pesos negativos)</li>
+<li>Floyd-Warshall (todos los pares)</li>
+<li>Algoritmos de flujo máximo</li>
+</ul>
+<h3 id="estructuras-avanzadas"><strong>Estructuras Avanzadas</strong></h3>
+<ul>
+<li>AVL Trees (balanceo automático)</li>
+<li>Red-Black Trees</li>
+<li>B-Trees (bases de datos)</li>
+<li>Heaps y colas de prioridad</li>
+</ul>
+<h3 id="aplicaciones"><strong>Aplicaciones</strong></h3>
+<ul>
+<li>Sistemas de recomendación</li>
+<li>Análisis de redes sociales</li>
+<li>Optimización de rutas</li>
+<li>Inteligencia artificial</li>
+</ul>
+<hr>
+<h2 id="%E2%9C%A8-reflexi%C3%B3n-final">✨ Reflexión Final</h2>
+<p>Este proyecto demuestra:</p>
+<ol>
+<li>
+<p><strong>Dominio Técnico Completo</strong></p>
+<ul>
+<li>8 semanas de contenido implementado</li>
+<li>Algoritmos fundamentales dominados</li>
+<li>Código de calidad profesional</li>
+</ul>
+</li>
+<li>
+<p><strong>Pensamiento Algorítmico</strong></p>
+<ul>
+<li>Selección apropiada de algoritmos</li>
+<li>Análisis de trade-offs</li>
+<li>Optimización de soluciones</li>
+</ul>
+</li>
+<li>
+<p><strong>Habilidades Profesionales</strong></p>
+<ul>
+<li>Código limpio y documentado</li>
+<li>Testing exhaustivo</li>
+<li>Documentación completa</li>
+</ul>
+</li>
+</ol>
+<p><strong>El curso de Estructuras de Datos Avanzadas está 100% completado con éxito.</strong></p>
+<hr>
+<h2 id="%F0%9F%93%96-referencias">📖 Referencias</h2>
+<ul>
+<li>Cormen, T. H., et al. (2009). <em>Introduction to Algorithms</em> (3rd ed.)</li>
+<li>Sedgewick, R., &amp; Wayne, K. (2011). <em>Algorithms</em> (4th ed.)</li>
+<li>Material del curso - Semanas 1-8</li>
+</ul>
+<hr>
+<p><strong>Fecha:</strong> Diciembre 2025<br>
+<strong>Curso:</strong> Estructuras de Datos Avanzadas<br>
+<strong>Semana:</strong> 8 - Proyecto Final<br>
+<strong>Estado:</strong> ✅ COMPLETADO AL 100%</p>
+<p>🎉 <strong>¡FELICIDADES POR COMPLETAR EL CURSO!</strong> 🎉</p>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+Problema de las Escaleras (1, 2, 3 pasos)
+Reto: Modificar para permitir saltos de 1, 2 o 3 escalones.
+
+Calculando formas para n=35 escalones...
+Memoization (Top-Down): 1132436852 formas (Tiempo: 8.8113 ms)
+Tabulación (Bottom-Up): 1132436852 formas (Tiempo: 0.7126 ms)
+
+Verificación de primeros valores:
+n=1: 1 formas
+n=2: 2 formas
+n=3: 4 formas
+n=4: 7 formas
+n=5: 13 formas

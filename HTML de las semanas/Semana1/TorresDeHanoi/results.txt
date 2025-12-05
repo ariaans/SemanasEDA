@@ -1,0 +1,19 @@
+Torres de Hanoi - Comparación Recursiva vs Iterativa
+ANÁLISIS COMPARATIVO (n=10):
+Recursivo: 0.333 ms - 1023 movimientos
+Iterativo: 1.371 ms
+Complejidad temporal (ambas): O(2^n)
+Complejidad espacial: recursivo O(n); iterativo O(1) si es bitwise, O(n) si usa pila.
+
+ANÁLISIS COMPARATIVO (n=15):
+Recursivo: 14.468 ms - 32767 movimientos
+Iterativo: 52.096 ms
+Complejidad temporal (ambas): O(2^n)
+Complejidad espacial: recursivo O(n); iterativo O(1) si es bitwise, O(n) si usa pila.
+
+ANÁLISIS COMPARATIVO (n=20):
+Recursivo: 418.994 ms - 1048575 movimientos
+Iterativo: 1059.279 ms
+Complejidad temporal (ambas): O(2^n)
+Complejidad espacial: recursivo O(n); iterativo O(1) si es bitwise, O(n) si usa pila.
+
